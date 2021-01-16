@@ -47,8 +47,12 @@ class UsersController < ApplicationController
     conn = Faraday.new('https://sendy.higheredlab.com')
     conn.post('/subscribe',api_key:"cKoFCdddFM9YIdSdvzmH", name:@user.name, email:@user.email,
       list:"892T763OdMvL6nGW3bMJs7cKYA", "Content-Type" => "application/x-www-form-urlencoded")
+    conn.post('/subscribe',api_key:"cKoFCdddFM9YIdSdvzmH", name:@user.name, email:@user.email,
+      list:"cjYRUzEyfNFjFMmD6dKIbQ", "Content-Type" => "application/x-www-form-urlencoded")
 
-    logger.info "Support: POST #{@user.name} #{@user.email} successful"
+    logger.info "Support: POST name:#{@user.name} email:#{@user.email} successful for list 1"
+    logger.info "Support: POST name:#{@user.name} email:#{@user.email} successful for list 2"
+
 
     logger.info "Support: #{@user.email} user has been created."
 
